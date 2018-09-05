@@ -1,0 +1,32 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+
+<dom-module id="facilities-view">
+  <template>
+    <div>
+      <paper-input id="inputId" value="{{userInput}}"></paper-input>
+      <button id="helloButton" on-click="sayHello">Say hello</button>
+      <div id="greeting">[[greeting]]</div>
+    </div>
+  </template>
+  <script>
+    class FacilitiesView extends Polymer.Element {
+
+      ready() {
+        super.ready();
+        this.loadFacilities();
+      }
+
+      loadFacilities() {
+        this.$server.loadFacilities();
+      }
+
+      static get is() {
+        return 'facilities-view';
+      }
+
+    }
+
+    customElements.define(FacilitiesView.is, FacilitiesView);
+  </script>
+</dom-module>

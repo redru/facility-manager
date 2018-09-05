@@ -1,0 +1,6 @@
+# Intellij IDEA
+.idea/
+facility-manager.iml
+
+# Maven
+target/
