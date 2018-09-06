@@ -1,0 +1,14 @@
+.facilities-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.facility {
+  border: 1px solid ghostwhite;
+  border-radius: 0.5em;
+  background-color: ghostwhite;
+  color: black;
+  margin-left: 1em;
+  padding: 1em;
+}

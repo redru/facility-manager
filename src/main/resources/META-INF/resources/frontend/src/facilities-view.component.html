@@ -2,8 +2,18 @@
 <link rel="import" href="../bower_components/paper-input/paper-input.html">
 
 <dom-module id="facilities-view">
+  <link rel="import" type="css" href="../styles/facilities-view.component.css">
+
   <template>
     <div>
+      <div class="facilities-container">
+        <template is="dom-repeat" items="{{employees}}">
+          <div class="facility">
+            <div>First name: <span>{{item.first}}</span></div>
+            <div>Last name: <span>{{item.last}}</span></div>
+          </div>
+        </template>
+      </div>
       <paper-input id="inputId" value="{{userInput}}"></paper-input>
       <button id="helloButton" on-click="sayHello">Say hello</button>
       <div id="greeting">[[greeting]]</div>
@@ -19,6 +29,10 @@
 
       loadFacilities() {
         this.$server.loadFacilities();
+        this.employees = [
+          { first: 'Bob', last: 'Smith' },
+          { first: 'Sally', last: 'Johnson' }
+        ];
       }
 
       static get is() {
