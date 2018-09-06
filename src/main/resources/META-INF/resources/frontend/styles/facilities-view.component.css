@@ -6,9 +6,18 @@
 
 .facility {
   border: 1px solid ghostwhite;
-  border-radius: 0.5em;
+  border-radius: 0.25em;
   background-color: ghostwhite;
   color: black;
-  margin-left: 1em;
+  margin: 1em 0 0 0;
+  max-width: 10em;
   padding: 1em;
+}
+
+.facility:hover {
+  cursor: pointer;
+}
+
+.facility span#facilityName {
+  font-weight: bolder;
 }

@@ -1,6 +1,9 @@
 package zen.test.spring.app.facilities;
 
+import com.vaadin.flow.templatemodel.Include;
 import com.vaadin.flow.templatemodel.TemplateModel;
+import java.util.List;
+import zen.test.spring.models.Facility;
 
 /**
  * Model for the template.
@@ -21,5 +24,10 @@ public interface FacilitiesViewModel extends TemplateModel {
    *            greeting string
    */
   void setGreeting(String greeting);
+
+  @Include({ "name", "description" })
+  void setFacilitiesList(List<Facility> facilitiesList);
+
+  List<Facility> getFacilitiesList();
 
 }

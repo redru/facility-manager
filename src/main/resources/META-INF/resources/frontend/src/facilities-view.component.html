@@ -7,16 +7,18 @@
   <template>
     <div>
       <div class="facilities-container">
-        <template is="dom-repeat" items="{{employees}}">
+        <template is="dom-repeat" items="[[facilitiesList]]">
           <div class="facility">
-            <div>First name: <span>{{item.first}}</span></div>
-            <div>Last name: <span>{{item.last}}</span></div>
+            <div><span id="facilityName">{{item.name}}</span></div>
+            <div><span id="facilityDescription">{{item.description}}</span></div>
           </div>
         </template>
       </div>
-      <paper-input id="inputId" value="{{userInput}}"></paper-input>
-      <button id="helloButton" on-click="sayHello">Say hello</button>
-      <div id="greeting">[[greeting]]</div>
+      <div>
+        <paper-input id="inputId" value="{{userInput}}"></paper-input>
+        <button id="helloButton" on-click="sayHello">Say hello</button>
+        <div id="greeting">[[greeting]]</div>
+      </div>
     </div>
   </template>
   <script>
@@ -29,10 +31,7 @@
 
       loadFacilities() {
         this.$server.loadFacilities();
-        this.employees = [
-          { first: 'Bob', last: 'Smith' },
-          { first: 'Sally', last: 'Johnson' }
-        ];
+
       }
 
       static get is() {
